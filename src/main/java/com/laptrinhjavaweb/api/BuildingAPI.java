@@ -35,8 +35,8 @@ public class BuildingAPI extends HttpServlet {
 		req.setCharacterEncoding("UTF-8");
 		resp.setContentType("application/json");
 		BuildingDTO buildingDTO = HttpUtil.of(req.getReader()).toModel(BuildingDTO.class);
-		//List<BuildingEntity> list = buildingService.findById(buildingDTO);
-		List<BuildingEntity> list = buildingService.search(buildingDTO);
+		//BuildingEntity building = buildingService.findById(buildingDTO.getId());
+		List<BuildingEntity> listBuilding = buildingService.findAll(buildingDTO);
 		System.out.println("abc");
 		mapper.writeValue(resp.getOutputStream(), buildingDTO);
 	}
@@ -67,7 +67,7 @@ public class BuildingAPI extends HttpServlet {
 		req.setCharacterEncoding("UTF-8");
 		resp.setContentType("application/json");
 		BuildingDTO buildingDTO = HttpUtil.of(req.getReader()).toModel(BuildingDTO.class);
-		buildingDTO = buildingService.delete(buildingDTO);
+		buildingService.delete(buildingDTO.getId());
 		mapper.writeValue(resp.getOutputStream(), buildingDTO);
 	}
 
