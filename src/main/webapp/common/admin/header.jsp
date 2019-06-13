@@ -8,7 +8,7 @@
             <a href="#" class="navbar-brand">
                 <small>
                     <i class="fa fa-leaf"></i>
-                    Trang quản trị
+                    Home Admin
                 </small>
             </a>
         </div>
