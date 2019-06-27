@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Add Building</title>
+<title>Edit Building</title>
 
 </head>
 <body>
@@ -15,7 +15,7 @@
 				<ul class="breadcrumb">
 					<li><i class="ace-icon fa fa-home home-icon"></i> <a href="#">Home</a>
 					</li>
-					<li>Add Building</li>
+					<li>Edit Building</li>
 				</ul>
 				<!-- /.breadcrumb -->
 			</div>
@@ -261,7 +261,7 @@
 
 							</div>
 							<div class="col-sm-3">
-								<button type="button">Add</button>
+								<button type="button">EDIT</button>
 							</div>
 						</div>
 						<br>

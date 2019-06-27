@@ -427,13 +427,6 @@ public class AbstractJDBC<T> implements GenericJDBC<T>{
 			stm = conn.prepareStatement(sql);
 			rs = stm.executeQuery();
 			if(conn!=null) {
-//				Collections.sort(resultSetMapper.mapRow(rs, this.zClass), new Comparator() {
-//					@Override
-//					public int compare(Object b1, Object b2) 
-//				    { 
-//				        return ((BuildingEntity)b1).getName().compareTo(((BuildingEntity)b2).getName()); 
-//				    }
-//				});
 				return resultSetMapper.mapRow(rs, this.zClass);
 				
 			}
@@ -705,7 +698,7 @@ public class AbstractJDBC<T> implements GenericJDBC<T>{
 			tableName = table.name();
 		}
 		
-		StringBuilder results = new StringBuilder("SELECT * FROM "+tableName+" WHERE 1=1");
+		StringBuilder results = new StringBuilder("SELECT * FROM "+tableName+" A WHERE 1=1");
 		if(properties!= null && properties.size()>0) {
 			String[] params = new String[properties.size()];
 			Object[] values = new Object[properties.size()];
@@ -719,6 +712,8 @@ public class AbstractJDBC<T> implements GenericJDBC<T>{
 				if(values[i1] instanceof String) {
 					results.append(" and LOWER("+params[i1]+") LIKE '%"+values[i1]+"%' ");
 				} else if(values[i1] instanceof Integer) {
+					results.append(" and "+params[i1]+" = "+values[i1]+" ");
+				}else if(values[i1] instanceof Long) {
 					results.append(" and "+params[i1]+" = "+values[i1]+" ");
 				}
 				

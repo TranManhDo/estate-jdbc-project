@@ -29,6 +29,9 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script
 	src="<c:url value='/template/paging/jquery.twbsPagination.js' />"></script>
+<link rel="stylesheet"
+	href="<c:url value='/template/admin/assets/css/buildingedit.css' />"
+	class="ace-main-stylesheet" id="main-ace-style" />
 </head>
 <body class="no-skin">
 	<!-- header -->

@@ -36,7 +36,7 @@ public class BuildingAPI extends HttpServlet {
 		resp.setContentType("application/json");
 		BuildingDTO buildingDTO = HttpUtil.of(req.getReader()).toModel(BuildingDTO.class);
 		//BuildingEntity building = buildingService.findById(buildingDTO.getId());
-		List<BuildingEntity> listBuilding = buildingService.findAll(buildingDTO);
+		//List<BuildingEntity> listBuilding = buildingService.findAll(buildingDTO);
 		System.out.println("abc");
 		mapper.writeValue(resp.getOutputStream(), buildingDTO);
 	}

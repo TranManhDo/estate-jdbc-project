@@ -1,6 +1,8 @@
 package com.laptrinhjavaweb.dto;
 
-public class BuildingDTO extends AbstractDTO{
+import com.laptrinhjavaweb.annotation.Column;
+
+public class BuildingDTO extends AbstractDTO<BuildingDTO>{
 	private String name;
 	private String  ward;
 	private String street;
@@ -22,7 +24,31 @@ public class BuildingDTO extends AbstractDTO{
 	private String managerName;
 	private String managerPhone;
 	private String type;
+	private String address;
+	private String rentArea;
+	
+	private String direction;
+	private String level;
+	private String costRentTo;
+	private String costRentFrom;
+	private String areaRentFrom;
+	private String areaRentTo;
+
 	private String[] buildingTypes = new String[] {};
+	
+	
+	public String getDirection() {
+		return direction;
+	}
+	public void setDirection(String direction) {
+		this.direction = direction;
+	}
+	public String getLevel() {
+		return level;
+	}
+	public void setLevel(String level) {
+		this.level = level;
+	}
 	public String getName() {
 		return name;
 	}
@@ -155,6 +181,43 @@ public class BuildingDTO extends AbstractDTO{
 	public void setBuildingTypes(String[] buildingTypes) {
 		this.buildingTypes = buildingTypes;
 	}
+	public String getCostRentTo() {
+		return costRentTo;
+	}
+	public void setCostRentTo(String costRentTo) {
+		this.costRentTo = costRentTo;
+	}
+	public String getCostRentFrom() {
+		return costRentFrom;
+	}
+	public void setCostRentFrom(String costRentFrom) {
+		this.costRentFrom = costRentFrom;
+	}
+	public String getAreaRentFrom() {
+		return areaRentFrom;
+	}
+	public void setAreaRentFrom(String areaRentFrom) {
+		this.areaRentFrom = areaRentFrom;
+	}
+	public String getAreaRentTo() {
+		return areaRentTo;
+	}
+	public void setAreaRentTo(String areaRentTo) {
+		this.areaRentTo = areaRentTo;
+	}
+	public String getAddress() {
+		return this.street + "," + this.ward;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getRentArea() {
+		return rentArea;
+	}
+	public void setRentArea(String rentArea) {
+		this.rentArea = rentArea;
+	}
+	
 	
 	
 }
