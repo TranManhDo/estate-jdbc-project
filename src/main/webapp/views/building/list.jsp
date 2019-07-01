@@ -59,7 +59,7 @@
 														<select class="form-control" id="sel1" name="district">
 															<option value="">Choose District</option>
 															<c:forEach var="item" items="${districts}">
-																<option value="${item.key}">${item.value}</option>
+																<option value="${item.key}"${item.key == model.district ? 'selected' : '' }>${item.value}</option>
 															</c:forEach>
 														</select>
 													</div>
@@ -167,7 +167,7 @@
 													<div class="fg-line">
 														<c:forEach var="item" items="${buildingTypes}">
 															<label class="checkbox-inline"> <input
-																type="checkbox" value="${item.key}" name="buildingTypes">${item.value}</label>
+																type="checkbox" value="${item.key}" name="buildingTypes" ${fn:contains(fn: join(model.buildingTypes,','),item.key) ? 'checked' : '' }>${item.value}</label>
 														</c:forEach>
 													</div>
 												</div>
@@ -194,7 +194,7 @@
 									<a flag="info"
 										class="dt-button buttons-colvis btn btn-white btn-primary btn-bold"
 										data-toggle="tooltip" title='Add building'
-										href='<c:url value="/admin-building?action=ADD"/>'> <span><i
+										href='<c:url value="/admin-building?action=EDIT"/>'> <span><i
 											class="fa fa-plus-circle bigger-110 purple"></i></span>
 									</a>
 									<button type="button"
@@ -215,6 +215,9 @@
 								<tr>
 									<th>Building Name</th>
 									<th>Address</th>
+									<th>Building Area</th>
+									<th>Number of basement</th>
+									<th>District</th>
 									<th>Cost Rent</th>
 									<th>Rent Area</th>
 									<th>Direction</th>
@@ -229,6 +232,9 @@
 									<tr>
 										<td>${item.name}</td>
 										<td>${item.address}</td>
+										<td>${item.buildingArea}</td>
+										<td>${item.numberOfBasement}</td>
+										<td>${item.district}</td>
 										<td>${item.costRent}</td>
 										<td>${item.rentArea}</td>
 										<td>${item.direction}</td>

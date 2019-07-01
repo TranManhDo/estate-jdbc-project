@@ -40,6 +40,9 @@ public class BuildingController extends HttpServlet{
 			url = "/views/building/addbuilding.jsp";
 		}
 		else if(action.equals("EDIT")){
+			if(model.getId() != null) {
+				model= buildingService.findById(model.getId());
+			}
 			url = "/views/building/editbuilding.jsp";
 		}
 		request.setAttribute("districts", DataUtils.getDistricts());
@@ -56,6 +59,9 @@ public class BuildingController extends HttpServlet{
 				.setStreet(model.getStreet())
 				.setDirection(model.getDirection())
 				.setLevel(model.getLevel())
+				.setDistrict(model.getDistrict())
+				.setNumberOfBasement(model.getNumberOfBasement())
+				.setBuildingArea(model.getBuildingArea())
 				.setAreaRentFrom(model.getAreaRentFrom())
 				.setAreaRentTo(model.getAreaRentTo())
 				.setCostRentFrom(model.getCostRentFrom())

@@ -10,7 +10,8 @@ public interface IBuildingService {
 	BuildingDTO save(BuildingDTO newBuilding);
 	BuildingDTO update(BuildingDTO newBuilding);
 	void delete(long id);
-	<T> T findById(long id);
+	//<T> T findById(long id);
 	//List<BuildingEntity> findAll(BuildingDTO buildingDTO);
 	List<BuildingDTO> findAll(BuildingSearchBuilder builder,Pageble pageble);
+	BuildingDTO findById(long id);
 }

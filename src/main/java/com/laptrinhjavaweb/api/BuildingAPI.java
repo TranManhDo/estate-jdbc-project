@@ -37,11 +37,19 @@ public class BuildingAPI extends HttpServlet {
 		BuildingDTO buildingDTO = HttpUtil.of(req.getReader()).toModel(BuildingDTO.class);
 		//BuildingEntity building = buildingService.findById(buildingDTO.getId());
 		//List<BuildingEntity> listBuilding = buildingService.findAll(buildingDTO);
-		System.out.println("abc");
+		
 		mapper.writeValue(resp.getOutputStream(), buildingDTO);
 	}
 
 	
+	/*protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		ObjectMapper mapper = new ObjectMapper();
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("application/json");
+		BuildingDTO buildingDTO = HttpUtil.of(request.getReader()).toModel(BuildingDTO.class);
+		buildingDTO = buildingService.save(buildingDTO);
+		mapper.writeValue(response.getOutputStream(), buildingDTO);
+	}*/
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ObjectMapper mapper = new ObjectMapper();
 		request.setCharacterEncoding("UTF-8");

@@ -9,31 +9,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.laptrinhjavaweb.dto.BuildingDTO;
+@WebServlet(urlPatterns = {"/adminhome"})
+public class Login extends HttpServlet{
 
-/**
- * Servlet implementation class ControllerMVC
- */
-@WebServlet(urlPatterns = "/home")
-public class ControllerMVC extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-   
-    public ControllerMVC() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
+	private static final long serialVersionUID = 2686801510274002166L;
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		BuildingDTO model = new BuildingDTO();
-		model.setName("Bitexco");
-		request.setAttribute("model", model);
-		RequestDispatcher rd = request.getRequestDispatcher("/views/home.jsp");
+		
+		RequestDispatcher rd = request.getRequestDispatcher("/views/admin/home.jsp");
 		rd.forward(request, response);
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 	}
-
 }
