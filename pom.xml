@@ -11,7 +11,7 @@
 
 	<name>estate-project</name>
 	<properties>
-		<mysql.connection.version>8.0.13</mysql.connection.version>
+		<mysql.connection.version>8.0.28</mysql.connection.version>
 		<sitemesh.version>2.4.2</sitemesh.version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
